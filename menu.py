@@ -8,3 +8,8 @@ def intro(bg_color, color, title):
 
 def notifier(color, text):
     print(color + text + Style.RESET_ALL)
+
+
+def receiving_input_data(color):
+    marker = color + ">" + Style.RESET_ALL
+    return input(marker)
