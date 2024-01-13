@@ -19,4 +19,10 @@ if __name__ == '__main__':
                 notifier(Fore.RED, '[!] The file extension is not suitable for processing. The file is not .txt')
             else:
                 break
-    print(filename)
+    data = read_file(filename)
+    if data['status'] == 3:
+        notifier(Fore.RED, '[!] File is empty')
+    elif data['status'] == 2:
+        notifier(Fore.RED, '[!] Unable to open and read file')
+    elif data['status'] == 1:
+        ...

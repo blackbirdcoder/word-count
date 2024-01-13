@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 
 
@@ -12,4 +13,18 @@ def check_file_extension(user_file, extension):
         return True
     return False
 
+
+def read_file(user_file):
+    Status = Enum(value='Status', names='SUCCESS FAILURE EMPTY')
+    try:
+        file = open(user_file, 'r')
+        file_data = [row.strip() for row in file]
+        if len(file_data) > 0:
+            return {'status': Status.SUCCESS.value, 'data': file_data}
+        else:
+            return {'status': Status.EMPTY.value, 'data': file_data}
+    except (NameError, ValueError, OSError):
+        return {'status': Status.FAILURE.value, 'data': []}
+    finally:
+        file.close()
 
