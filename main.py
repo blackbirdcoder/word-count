@@ -25,4 +25,4 @@ if __name__ == '__main__':
     elif data['status'] == 2:
         notifier(Fore.RED, '[!] Unable to open and read file')
     elif data['status'] == 1:
-        ...
+        counted_words = count_words(data['data'])

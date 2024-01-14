@@ -162,4 +162,3 @@ cython_debug/
 # Other
 /.idea
 .idea/misc.xml
-/temp

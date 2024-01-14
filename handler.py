@@ -28,3 +28,13 @@ def read_file(user_file):
     finally:
         file.close()
 
+
+def count_words(data):
+    result = dict()
+    words = list()
+    for piece in data:
+        for item in piece.split():
+            words.append(item.strip('.,'))
+    for word in words:
+        result[word] = 1 if result.get(word) is None else result[word] + 1
+    return result
