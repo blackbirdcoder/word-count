@@ -34,7 +34,7 @@ def count_words(data):
     words = list()
     for piece in data:
         for item in piece.split():
-            words.append(item.strip('.,'))
+            words.append(item.strip('.,:;?!()'))
     for word in words:
         result[word] = 1 if result.get(word) is None else result[word] + 1
-    return result
+    return dict(sorted(result.items(), key=lambda value: value[1]))

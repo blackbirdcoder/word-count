@@ -26,3 +26,4 @@ if __name__ == '__main__':
         notifier(Fore.RED, '[!] Unable to open and read file')
     elif data['status'] == 1:
         counted_words = count_words(data['data'])
+        show_table(counted_words, ['Word', 'Count'], Fore.MAGENTA, Fore.GREEN)
