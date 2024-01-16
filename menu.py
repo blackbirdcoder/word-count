@@ -20,7 +20,7 @@ def receiving_input_data(color):
 def show_table(data_words, fields_names, color_bar, color_table):
     table = PrettyTable()
     table.field_names = [fields_names[0], fields_names[1]]
-    for item in tqdm(data_words.items(), ascii=True, desc=color_bar + 'Process'):
+    for item in tqdm(data_words.items(), ascii=True, desc=color_bar + 'Process', bar_format='{l_bar}{bar:20}{r_bar}'):
         table.add_row([item[0], item[1]])
     print(color_table)
     print(table)
